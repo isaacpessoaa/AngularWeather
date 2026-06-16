@@ -1,0 +1,51 @@
+<div class="home-container">
+  <header>
+    <h1>🌤️ AngularWeather</h1>
+    <div class="header-actions">
+      <a routerLink="/favorites">⭐ Favoritos</a>
+      <button (click)="logout()">Sair</button>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Buscar cidade..."
+      [(ngModel)]="searchCity"
+      (keyup.enter)="search()"
+    />
+    <button (click)="search()">🔍</button>
+  </div>
+
+  <div *ngIf="recentSearches.length > 0" class="recent">
+    <span>Recentes:</span>
+    <button *ngFor="let city of recentSearches" (click)="goToDetail(city)">
+      {{ city }}
+    </button>
+  </div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="loading && !weather" class="loading">Carregando...</div>
+
+  <div *ngIf="weather" class="weather-card">
+    <div class="city-name">
+      <h2>{{ weather.name }}, {{ weather.sys.country }}</h2>
+      <button class="fav-btn" (click)="toggleFavorite()">
+        {{ isFavorite() ? '⭐' : '☆' }}
+      </button>
+    </div>
+
+    <div class="temp">{{ weather.main.temp | number:'1.0-0' }}°C</div>
+    <div class="desc">{{ weather.weather[0].description }}</div>
+
+    <div class="details">
+      <div>💧 Umidade: {{ weather.main.humidity }}%</div>
+      <div>🌡️ Sensação: {{ weather.main.feels_like | number:'1.0-0' }}°C</div>
+      <div>💨 Vento: {{ weather.wind.speed }} m/s</div>
+    </div>
+
+    <button class="detail-btn" (click)="goToDetail(weather.name)">
+      Ver previsão completa →
+    </button>
+  </div>
+</div>
