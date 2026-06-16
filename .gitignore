@@ -1,4 +1,4 @@
-frontend/AngularWeather/node_modules
-frontend/AngularWeather/.angular
-backend/node_modules
+frontend/node_modules/
+frontend/.angular/
+backend/node_modules/
 backend/.env
