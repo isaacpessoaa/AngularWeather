@@ -1,0 +1,45 @@
+<div class="detail-container">
+  <header>
+    <a routerLink="/home">← Voltar</a>
+    <h1>{{ cityName }}</h1>
+    <button class="fav-btn" (click)="toggleFavorite()">
+      {{ isFavorite() ? '⭐' : '☆' }}
+    </button>
+  </header>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="loading" class="loading">Carregando...</div>
+
+  <div *ngIf="current" class="current-card">
+    <div class="temp">{{ current.main.temp | number:'1.0-0' }}°C</div>
+    <div class="desc">{{ current.weather[0].description }}</div>
+    <div class="details">
+      <div>💧 {{ current.main.humidity }}%</div>
+      <div>🌡️ {{ current.main.feels_like | number:'1.0-0' }}°C</div>
+      <div>💨 {{ current.wind.speed }} m/s</div>
+      <div>☁️ {{ current.clouds.all }}%</div>
+    </div>
+  </div>
+
+  <section *ngIf="hourly.length > 0">
+    <h2>Próximas 24 horas</h2>
+    <div class="hourly-list">
+      <div class="hour-card" *ngFor="let h of hourly">
+        <div class="hour">{{ getHour(h.dt_txt) }}</div>
+        <div class="hour-temp">{{ h.main.temp | number:'1.0-0' }}°C</div>
+        <div class="hour-desc">{{ h.weather[0].description }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="forecast.length > 0">
+    <h2>Próximos dias</h2>
+    <div class="forecast-list">
+      <div class="forecast-card" *ngFor="let day of forecast">
+        <div class="day">{{ getWeekDay(day.dt_txt) }}</div>
+        <div class="day-temp">{{ day.main.temp | number:'1.0-0' }}°C</div>
+        <div class="day-desc">{{ day.weather[0].description }}</div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,14 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>🌤️ AngularWeather</h1>
+    <h2>Entrar</h2>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <input type="email" placeholder="Email" [(ngModel)]="email" />
+    <input type="password" placeholder="Senha" [(ngModel)]="password" />
+    <button (click)="onLogin()">Entrar</button>
+
+    <p>Não tem conta? <a routerLink="/register">Cadastre-se</a></p>
+  </div>
+</div>

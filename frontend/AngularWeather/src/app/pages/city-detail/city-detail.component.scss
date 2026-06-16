@@ -1,0 +1,114 @@
+.detail-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  h1 { margin: 0; font-size: 1.4rem; }
+
+  .fav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.error {
+  background: rgba(255,80,80,0.2);
+  border: 1px solid rgba(255,80,80,0.4);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  color: #ff8a80;
+}
+
+.loading {
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  margin: 40px 0;
+}
+
+.current-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 24px;
+
+  .temp { font-size: 5rem; font-weight: 200; margin-bottom: 8px; }
+  .desc { font-size: 1.1rem; color: rgba(255,255,255,0.7); text-transform: capitalize; margin-bottom: 20px; }
+
+  .details {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.hourly-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+
+  .hour-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    min-width: 80px;
+
+    .hour { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+    .hour-temp { font-size: 1.1rem; font-weight: bold; margin-bottom: 4px; }
+    .hour-desc { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: capitalize; }
+  }
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .forecast-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .day { color: rgba(255,255,255,0.7); text-transform: capitalize; min-width: 60px; }
+    .day-temp { font-size: 1.2rem; font-weight: bold; }
+    .day-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-transform: capitalize; }
+  }
+}

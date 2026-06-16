@@ -1,0 +1,79 @@
+.favorites-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  h1 { margin: 0; font-size: 1.4rem; }
+}
+
+.empty {
+  text-align: center;
+  margin-top: 80px;
+  color: rgba(255,255,255,0.5);
+
+  a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #4fc3f7;
+    text-decoration: none;
+  }
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .fav-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .fav-info {
+      cursor: pointer;
+
+      .fav-city { font-size: 1.1rem; font-weight: bold; margin-bottom: 4px; }
+      .fav-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-transform: capitalize; }
+    }
+
+    .fav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .fav-temp { font-size: 1.5rem; font-weight: 200; }
+
+      button {
+        background: rgba(255,80,80,0.2);
+        border: 1px solid rgba(255,80,80,0.4);
+        color: #ff8a80;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.8rem;
+
+        &:hover { background: rgba(255,80,80,0.4); }
+      }
+    }
+  }
+}
