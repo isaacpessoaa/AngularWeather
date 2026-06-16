@@ -41,8 +41,8 @@ O AngularWeather permite que usuários visualizem as condições climáticas atu
 ### Login
 ![Tela de Login](./screenshots/login.png)
 
-### Home
-![Tela Home](./screenshots/home.png)
+### Cadastro
+![Tela Home](./screenshots/cadastro.png)
 
 ### Previsão Completa
 ![Tela de Detalhes](./screenshots/detail.png)
